@@ -1,0 +1,27 @@
+$background_color: #FFEDF7;
+$main_color: #ff4384;
+$side_color: #003164;
+$font: 12px 16px 24px 30px 46px 48px 100px 176px;
+@mixin out($w){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $w;
+  height: $w;
+  border: 1px solid $side_color;
+  border-radius: 50%;
+}
+@mixin in($w, $f) {
+  width: $w;
+  height: $w;
+  line-height: $w;
+  text-align: center;
+  color: $side_color;
+  font-size: nth($font, $f);
+  opacity: 0;
+}
+@mixin rwd(){
+  @media screen and (max-width:960px){
+    @content;
+  }
+}
