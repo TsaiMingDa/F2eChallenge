@@ -51,6 +51,7 @@
   border: #fff;
   padding-left: 10px;
   font-size: nth($font,3);
+  z-index:  999;
   &::placeholder {
     color: $main_color;
     font-size: nth($font, 2);
