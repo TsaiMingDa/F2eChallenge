@@ -128,7 +128,7 @@
   border-radius: 0 50% 50% 0;
   margin-left: 50%;
   overflow: hidden;
-  animation: animationW 60s 1 linear;
+  animation: animationW 1500s 1 linear;
   animation-play-state: paused;
 
   @include rwd(){
@@ -143,7 +143,7 @@
   top: 0;
   width: 540px;
   height: 270px;
-  background-color: green;
+  background-color: $main_color;
   border-radius: 270px 270px 0 0;
   transform-origin: 270px 270px;
   @include smallCircle(170px, 340px){
@@ -155,14 +155,14 @@
 .animation:before{
   z-index: 1;
   transform: rotate(-90deg);
-  animation: roll 60s 1 linear;
+  animation: roll 1500s 1 linear;
   animation-play-state: paused;
 }
 .animation:after{
   z-index: 2;
   opacity: 0;
   transform: rotate(90deg);
-  animation: op 60s 1 linear;
+  animation: op 1500s 1 linear;
   animation-play-state: paused;
 }
 @keyframes roll{
