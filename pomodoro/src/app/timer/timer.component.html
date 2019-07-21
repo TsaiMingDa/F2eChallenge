@@ -1,0 +1,12 @@
+<div class="wrap">
+  <div class="wrap_content">
+      <div class="place animation_wrap_hind" *ngIf="animationClass">
+        <div class="animation" [class.runing] = "start" [class.animation_runing] = "start"></div>
+      </div>
+      <div class="out place"></div>
+      <div class="in place" [class.start_white] = "start"></div>
+      <div class="start_o place" [class.start_pink] = "start" (click)="startTime()"></div>
+      <div class="start_in place" [class.pause_btn] = "start" (click)="startTime()"></div>
+  </div>
+  <div class="stop" [class.start_pink] = "start" (click)="stopTime()"></div>
+</div>

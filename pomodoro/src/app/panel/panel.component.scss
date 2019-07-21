@@ -1,0 +1,195 @@
+@import '../../assets/share.scss';
+:host {
+  background-color: $background_color;
+  display: block;
+  flex-grow: 4;
+  position: relative;
+  @include rwd(){
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  // max-width: 445px;
+  // height: 100%;
+}
+.panel_wrap{
+  display: flex;
+  height: 100vh;
+  background-color: $background_color;
+  flex-direction: column;
+  justify-content:space-around;
+  position: relative;
+  left: 10%;
+  max-width: 450px;
+  @include rwd(){
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    justify-content: start;
+    height: auto;
+    align-items: center;
+  }
+}
+.radio_group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+.new_mission_mission{
+  position: relative;
+  height: 56px;
+  @include rwd(){
+    width: 100%;
+  }
+}
+.new_mission{
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: #fff;
+  padding-left: 10px;
+  font-size: nth($font,3);
+  &::placeholder {
+    color: $main_color;
+    font-size: nth($font, 2);
+    padding-left: 10px;;
+  }
+}
+.new_mission_mission_icon{
+  position: absolute;
+  text-align: center;
+  right: 0;
+  height: 100%;
+  width: 35px;
+  line-height: 56px;
+  color: $main_color;
+  font-size: nth($font, 3);
+  cursor: pointer;
+}
+//  the first thing to do today
+.center_info{
+  display: flex;
+  flex-direction: column;
+  @include rwd(){
+    align-items: center;
+  }
+}
+.doing_item{
+  z-index: 999;
+  label{
+    display: flex;
+  }
+  .out{
+    @include out(48px);
+    @include rwd(){
+      @include out(40px);
+    }
+  }
+  .in{
+    @include in(40px, 6);
+  }
+  .info{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: nth($font, 3);
+    padding-left: 15px;
+    color: $side_color;
+  }
+  .text{
+    overflow : hidden;
+    text-overflow : ellipsis;
+    white-space : nowrap;
+    width: 98%;
+  }
+  @include rwd(){
+    order: 2;
+    margin-bottom: 15px;
+  }
+}
+#doing_thing{
+  position: absolute;
+  opacity: 0;
+}
+:checked +.out .in{
+  opacity: 1;
+}
+// counting
+.counting{
+  display: flex;
+  color: $main_color;
+  font-size: nth($font , 8);
+  font-weight: 900;
+  @include rwd(){
+    order: 1;
+    font-size: nth($font , 7);
+    justify-content: center;
+    margin: 30px;
+  }
+}
+// todolist
+.todo_list{
+  z-index: 999;
+  width: 80%;
+}
+.radio_wrap{
+  position: relative;
+  font-size: nth($font, 2);
+  color: $side_color;
+  border-bottom: 2px solid #cbc7d9;
+  padding-bottom: 9px;
+  margin-bottom: 15px;
+  label{
+    display: flex;
+    input{
+      position: absolute;
+      opacity: 0;
+    }
+  }
+  .out{
+    @include out(24px);
+  }
+  .in{
+    @include in(20px, 2);
+  }
+  .text{
+    padding-left: 10px;
+    font-size: nth($font, 2);
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+  }
+}
+.start_out{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-left: 3px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  border: 1px solid $side_color;
+  cursor: pointer;
+}
+.start_in{
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid $side_color;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+.more{
+  font-size: nth($font, 2);
+  color: $main_color;
+  font-weight: 600;
+  float: right;
+  @include rwd(){
+    display: none;
+  }
+}

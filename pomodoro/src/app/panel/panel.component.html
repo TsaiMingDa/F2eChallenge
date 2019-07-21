@@ -1,0 +1,49 @@
+<div class="panel_wrap">
+  <!-- new mession -->
+  <div class="new_mission_mission">
+    <input #inputBox type="text" class="new_mission" placeholder="ADD A NEW MISSION..." (keyup.enter)="newMission($event)">
+    <div class="new_mission_mission_icon" (click)="newMission()" >+</div>
+  </div>
+  <!-- the first thing to do today -->
+  <div class="center_info">
+    <div class="doing_item">
+      <label>
+        <div class="btn">
+          <input type="radio" id="doing_thing" data-index="0" (click)="spliceTodoList($event)">
+          <div class="out">
+            <div class="in">✔</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="text" >{{_todoList[0]}}</div>
+          <div class="doing_icon">***</div>
+        </div>
+      </label>
+    </div>
+    <!-- time -->
+    <div class="counting">
+      <div class="min">{{min}}</div>
+      <div class="colon">:</div>
+      <div class="sec">{{sec}}</div>
+    </div>
+  </div>
+
+  <!-- todolist -->
+  <div class="todo_list" cdkDropList  (cdkDropListDropped)="drop($event)">
+    <div class="radio_wrap" cdkDrag *ngFor="let todo of _todoList | slice:1:4; let i = index">
+      <label>
+        <input type="radio"  [attr.data-index]="i+1" (click)="spliceTodoList($event)">
+        <div class="out">
+          <div class="in">✔</div>
+        </div>
+        <div class="text">{{todo}}</div>
+      </label>
+      <div class="start_out" [attr.data-index]="i+1" (click)="changeMission($event)">
+        <div class="start_in" ></div>
+      </div>
+    </div>
+    <div class="more">MORE</div>
+  </div>
+</div>
+<!-- timer -->
+<app-timer></app-timer>

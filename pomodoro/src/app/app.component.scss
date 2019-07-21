@@ -1,0 +1,11 @@
+@import '../assets/share.scss';
+
+.wrap{
+  display: flex;
+  @include rwd() {
+    height: 100vh;
+    flex-direction: column;
+  }
+}
+
+
