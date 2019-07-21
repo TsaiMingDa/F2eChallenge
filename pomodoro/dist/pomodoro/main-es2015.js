@@ -265,7 +265,7 @@ __webpack_require__.r(__webpack_exports__);
 let PanelComponent = class PanelComponent {
     constructor(timeService) {
         this.timeService = timeService;
-        this.todoList = ['1', '2', '3', '4'];
+        this.todoList = ['THE FIRST THING TO DO TODAY'];
     }
     ngOnInit() {
     }

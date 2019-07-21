@@ -275,7 +275,7 @@ __webpack_require__.r(__webpack_exports__);
 var PanelComponent = /** @class */ (function () {
     function PanelComponent(timeService) {
         this.timeService = timeService;
-        this.todoList = ['1', '2', '3', '4'];
+        this.todoList = ['THE FIRST THING TO DO TODAY'];
     }
     PanelComponent.prototype.ngOnInit = function () {
     };

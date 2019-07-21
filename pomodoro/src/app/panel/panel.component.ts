@@ -10,7 +10,7 @@ export class PanelComponent implements OnInit {
 
   @ViewChild('inputBox', {static: false}) input: ElementRef;
   constructor(private timeService: TimerService) { }
-  todoList = ['1', '2', '3', '4'];
+  todoList = ['THE FIRST THING TO DO TODAY'];
   ngOnInit() {
   }
   get sec() {
