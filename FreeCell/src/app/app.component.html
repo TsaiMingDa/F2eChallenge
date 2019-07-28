@@ -1,0 +1,55 @@
+<div class="main">
+  <div class="top">
+    <div class="left">
+      <div class="container" [attr.data-containers-id] = "i"  *ngFor="let container of leftContainers;let i = index" (drop)="drop($event, 'left')" (dragover) = "cancelDefault($event)" >
+        <ng-container *ngIf= "container.length">
+          <div class="card" *ngFor="let card of container;let j = index"  [attr.data-containers-id] = "i" [attr.data-card-id] = "j" [ngStyle]=" {'background-image': 'url(../assets/images/'+ card.type + card.number+'.png)'}" [draggable] = "true" (dragstart)= "drag($event, 'fromLeft')"></div>
+        </ng-container>
+      </div>
+    </div>
+    <img src="../assets/images/king_happy.png" alt="" class="min_icon">
+    <div class="right">
+      <div class="container" *ngFor="let cardType of rightContainersType;let i = index" [attr.data-containers-id] = "i" [ngStyle]=" {'background-image': 'url(../assets/images/'+ cardType +'.png)'}" (drop)="drop($event, 'right')" (dragover) = "cancelDefault($event)">
+        <ng-container *ngIf= "rightContainers[i].length">
+          <div class="card" [attr.data-containers-id] = "i" *ngFor="let card of rightContainers[i];let j = index" [ngStyle]=" {'background-image': 'url(../assets/images/'+ card.type + card.number+'.png)'}"></div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="down">
+    <div class="containers" *ngFor="let container of containers;let i = index">
+      <div class="card" [attr.data-containers-id] = "i" *ngFor="let card of container;let j = index" [attr.data-card-id] = "j" [ngStyle]=" {'background-image': 'url(../assets/images/'+ card.type + card.number+'.png)' ,'top': j*25 + 'px'}" [draggable]="card.dragable" (dragstart)= "drag($event, 'fromDown')" (drop) = "drop($event)" (dragover) = "cancelDefault($event)" ></div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="groups">
+    <div class="info_group">
+      <div class="icon_wrap" (click) ="showInfo = true">
+        <img src="../assets/images/info.svg" alt="說明" class="icon">
+      </div>
+      <div class="time">TIME: {{minTxt}}:{{secTxt}}</div>
+      <div class="score">SCORE:0</div>
+    </div>
+    <div class="btn_group">
+      <div class="btn" (click)="newGame()">NEW GAME</div>
+      <div class="btn" (click)="restart()">RESTART</div>
+      <div class="btn notAllowed">HINT</div>
+      <div class="btn notAllowed">UNDO</div>
+    </div>
+  </div>
+</div>
+<div class="infoBox" *ngIf="showInfo">
+  <div class="infomation">
+    <div class="close" (click) ="showInfo = false"><img src="../assets/images/baseline-close-24px.svg"></div>
+    <div class="pic"><img src="../assets/images/king_happy.png" alt=""></div>
+    <div class="title">FREECELL RULE</div>
+    <div class="txt">
+      The object of the game is to build up all cards on foundations from Ace to King by following suit. You win when all 52 cards are moved there, 13 to a pile.
+      <p></p>
+       Top cards of tableau piles and cards from Cells are available to play. You can build tableau piles down by alternating color. Only one card at a time can be moved. The top card of any tableau pile can also be moved to any Cell. Each Cell (or Reserve space) may contain only one card. Cards in the cells can be moved to the foundation piles or back to the tableau piles, if possible.
+       <p></p>
+       The rules state that you can move only one card at a time, but you can move group of cards in the proper sequence if you have enough free (empty) Cells and/or tableau piles.
+    </div>
+  </div>
+</div>
