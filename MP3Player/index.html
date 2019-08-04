@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mp3Player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" integrity="sha256-afz3aCt3EXZjTcVN6wxBLPnsQN+THVagSA7lG0ftFZg=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style/main.css">
+</head>
+<body>
+  <div class="wrap" id="app">
+    <div class="side">
+      <div class="logo">MUSSIC</div>
+      <div class="music_group">
+        <div class="title">MY MUSIC</div>
+        <ul>
+          <li><img src="./images/music-outline.png" alt="">Songs</li>
+          <li><img src="./images/Music_cassette_tape_free_icon_5.png" alt="">Albums</li>
+          <li><img src="./images/Microphone_free_icon_6.png" alt="">Artlist</li>
+          <li><img src="./images/refresh-outline.png" alt="">Recent</li>
+        </ul>
+      </div>
+      <div class="playlist_group">
+        <div class="title">PLAYLIST</div>
+        <ul>
+          <li><img src="" alt="">Discover</li>
+          <li><img src="" alt="">Favorite</li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <div class="control">
+        <div class="playing_panel">
+          <div class="left" v-on:click="beforeSong()"><img src="./images/left.png" alt=""></div>
+          <div class="stop" v-on:click="playOrPause()"><img :src="startOrStomImg" alt=""></div>
+          <div class="right" v-on:click = "nextSong()"><img src="./images/right.png" alt=""></div>
+        </div>
+        <div class="cd_icon"><img src=".//images/Image2.png" alt=""></div>
+        <div class="main_panel">
+          <div class="c_name">{{songObj[playing].title}}</div>
+          <div class="c_singer">{{songObj[playing].author}}</div>
+          <div class="c_reapt"><img src="./images/repeat.png" alt=""></div>
+          <div class="time_group">
+            <div class="c_playing">{{currentTimeTxt}}</div>
+            <div class="c_song_time">{{songObj[playing].durationTxt}}</div>
+          </div>
+          
+          <input id="c_range" type="range" min="0" max="100" name="" v-on:change = "songDurationChange($event)" :value = "currentTimeRangePos">          
+        </div>
+        <div class="sub_control">
+          <div class="random"><img src="./images/shuffle-2-outline.svg" alt=""></div>
+          <div class="all_reapt"><img src="./images/repeat-outline.svg" alt=""></div>
+        </div>
+        <div class="voice_group">
+          <div class="voice"><img src="./images/volume-up-outline.svg" alt=""></div>
+          <div class="voic_range">
+            <input type="range"  min="0" max="100" name="" id="" v-on:change = "voiceChange($event)">
+          </div>   
+        </div>
+      </div>
+      <div class="albums">
+        <h2>Albums</h2>
+        <div class="albums_wrap">
+          <div v-for="item in albums">
+            <img :src="item.img" alt="">
+            <div class="title">{{item.title}}</div>
+            <div class="author">{{item.author}}</div>
+          </div>
+          <!-- <div>
+            <img src="./images/getImage(6).png" alt="">
+            <div class="title">÷ (Divide)</div>
+            <div class="author">Ed Sheeran</div>
+          </div>
+          <div>
+            <img src="./images/002564bb2e1f11f477770a-1.png" alt="">
+            <div class="title">DNA</div>
+            <div class="author">Backstreet Boys</div>
+          </div>
+          <div>
+            <img src="./images/002564bb2e1f11f477770a-2.png" alt="">
+            <div class="title">Singles</div>
+            <div class="author">Maroon 5</div>
+          </div>
+          <div>
+            <img src="./images/002564bb2e1f11f477770a-3.png" alt="">
+            <div class="title">Greatest Hits</div>
+            <div class="author">Queen</div>
+          </div>
+          <div>
+            <img src="./images/getImage(8).png" alt="">
+            <div class="title">Different World</div>
+            <div class="author">Alan Walker</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="detial">
+        <div class="cd_cover">
+          <img src="./images/Image1.png" alt="">
+          <div class="titl">Know</div>
+          <div class="author">Jason Mraz</div>
+        </div>
+        <div class="play_list">
+          <div class="song" v-on:click="play(index)" v-bind:class="{ playing: song.playing  }" v-for = "(song, index) in songObj">
+            <div class="number">{{index + 1}}</div>
+            <div class="content_wrap">
+              <div class="name">{{song.title}}</div>
+              <div class="singer">{{song.author}}</div>
+            </div>
+            <div class="time">{{song.durationTxt}}</div>
+            <div class="function">...</div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="ads" v-on:click="adBanner()"  v-if="adShowBanner">
+      <img src="./images/boga-rin-aDu5aedOoD8-unsplash@2x_.png" alt="">
+    </div>
+  </div>
+
+  <div id="player0"></div>
+  <div id="player1"></div>
+  <div id="player2"></div>
+  <div id="player3"></div>
+  <div id="player4"></div>
+  <div id="player5"></div>
+  <div id="player6"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="./script/main.js"></script>
+</body>
+</html>
