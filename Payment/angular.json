@@ -23,6 +23,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
+            "baseHref" : "/Payment/dist/Payment/",
+            "deployUrl": "/Payment/dist/Payment/",
             "assets": [
               "src/favicon.ico",
               "src/assets"
