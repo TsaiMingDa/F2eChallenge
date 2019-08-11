@@ -9,7 +9,7 @@
   <div class="name_wrap">
     <div class="title"><span class="star">*</span>持卡人</div>
     <input type="text" class="name" placeholder="請輸入持卡人姓名" formControlName="name">
-    <div [hidden]="formData.get('name').untouched || formData.get('name').valid" class="error">持卡人姓名需與信用卡面姓名一致<img src="../../assets/images/warning.svg" alt=""></div>
+    <div [hidden]="formData.get('name').untouched || formData.get('name').valid" class="error">持卡人姓名需與信用卡面姓名一致<img src="./assets/images/warning.svg" alt=""></div>
   </div>
   <div class="card_number">
     <div class="title"><span class="star">*</span>信用卡號</div>
@@ -19,7 +19,7 @@
       <input type="text" formControlName="num3"><span class="dash">-</span>
       <input type="text" formControlName="num4">
     </div>
-    <div [hidden]="(formData.get('num1').untouched || formData.get('num1').valid) && (formData.get('num2').untouched || formData.get('num2').valid) && (formData.get('num3').untouched || formData.get('num3').valid) && (formData.get('num4').untouched || formData.get('num4').valid)" class="error">號碼有誤<img src="../../assets/images/warning.svg" alt=""></div>
+    <div [hidden]="(formData.get('num1').untouched || formData.get('num1').valid) && (formData.get('num2').untouched || formData.get('num2').valid) && (formData.get('num3').untouched || formData.get('num3').valid) && (formData.get('num4').untouched || formData.get('num4').valid)" class="error">號碼有誤<img src="./assets/images/warning.svg" alt=""></div>
   </div>
   <div class="credit_id_info">
     <div class="deadline_wrap">
@@ -28,20 +28,20 @@
         <input type="text" class="month" placeholder="MM" formControlName="month">
         <span class="slash">/</span>
         <input type="text" class="year" placeholder="YY" formControlName="year">
-        <div [hidden]="(formData.get('month').untouched || formData.get('month').valid) && (formData.get('year').untouched || formData.get('year').valid)" class="error">必填欄位<img src="../../assets/images/warning.svg" alt=""></div>
+        <div [hidden]="(formData.get('month').untouched || formData.get('month').valid) && (formData.get('year').untouched || formData.get('year').valid)" class="error">必填欄位<img src="./assets/images/warning.svg" alt=""></div>
       </div>
     </div>
     <div class="back_num">
       <div class="title"><span class="star">*</span>信用卡背面末三碼</div>
       <input type="text" formControlName="backN">
-      <div [hidden]="formData.get('backN').untouched || formData.get('backN').valid" class="error">{{!formData.get('backN').errors || formData.get('backN').errors['invalidBCode']}}<img src="../../assets/images/warning.svg" alt=""></div>
+      <div [hidden]="formData.get('backN').untouched || formData.get('backN').valid" class="error">{{!formData.get('backN').errors || formData.get('backN').errors['invalidBCode']}}<img src="./assets/images/warning.svg" alt=""></div>
     </div>
   </div>
   <div class="phone_wrap">
     <div class="title"><span class="star">*</span>手機號碼</div>
     <input class="" type="nubmer" formControlName="phone">
 
-    <div [hidden]="formData.get('phone').untouched || formData.get('phone').valid" class="error">{{ !formData.get('phone').errors || (formData.get('phone').errors['invalidNotsetCode'] || formData.get('phone').errors['invalidPhoneCode'])}}<img src="../../assets/images/warning.svg" alt=""></div>
+    <div [hidden]="formData.get('phone').untouched || formData.get('phone').valid" class="error">{{ !formData.get('phone').errors || (formData.get('phone').errors['invalidNotsetCode'] || formData.get('phone').errors['invalidPhoneCode'])}}<img src="./assets/images/warning.svg" alt=""></div>
     <div class="phone_info">
       如非台灣手機號碼請加國碼，如香港為852，則輸入852123456789。 若刷卡驗證採簡訊驗證，簡訊將發送至您於發卡銀行留存的手機號碼。
     </div>
