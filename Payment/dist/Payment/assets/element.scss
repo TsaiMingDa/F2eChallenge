@@ -1,0 +1,9 @@
+@mixin rwd {
+  @media screen and (max-width: 960px) {
+    @content;
+  }
+}
+
+$font: 14px 18px 24px 32px 36px 40px 48px;
+$main_color: #A8D574;
+$side_color: #343434;
