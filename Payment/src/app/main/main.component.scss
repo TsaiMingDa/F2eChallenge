@@ -1,0 +1,106 @@
+@import '../../assets/element.scss';
+.banner{
+  img{
+    width: 100%;
+  }
+}
+.order_title{
+  font-size: nth($font, 6);
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.title{
+  font-size: nth($font, 2);
+  margin: 20px auto 0px auto;
+}
+.money{
+  text-align: right;
+  font-size: nth($font, 5);
+  padding-right: 60px;
+  span{
+    font-size: nth($font, 3);
+  }
+}
+.content{
+  font-size: nth($font, 3);
+  margin: 3px auto;
+}
+.card{
+  display: inline-block;
+  width: 80%;
+  height: 90px;
+  background-color: #fff;
+  margin: 10px auto 10px auto;
+  font-size: nth($font, 4);
+  line-height: 90px;
+  padding-left: 30px;
+  cursor: pointer;
+  span{
+    font-size: nth($font, 1);
+    padding-left: 15px;
+  }
+  @include rwd{
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+.main_info{
+  width: 43%;
+  @include rwd {
+   width: 100%;
+   margin: auto;
+  }
+}
+.content_wrap{
+  width: 80%;
+  margin-left: auto;
+  @include rwd{
+    width: 100%;
+  }
+}
+.txt_wrap{
+  @include rwd{
+    width: 90%;
+    margin-left: auto;
+  }
+}
+.pay_contnet{
+  position: absolute;
+  background-color: $side_color;
+  width: 57%;
+  min-height: 100%;
+  top: 0;
+  right: 0;
+  box-shadow: -1px 0 2px $side_color;
+
+  @include rwd {
+    position: static;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+}
+
+.web_atm{
+  display: none;
+}
+.real_atm{
+  display: none;
+}
+.logo{
+  width: 156px;
+  height: 38px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  img{
+    width: 100%;
+  }
+}
+.active{
+  width: 100%;
+  color: #fff;
+  background-color: $side_color;
+}
+.web_atm, .real_atm{
+  cursor: not-allowed;
+}

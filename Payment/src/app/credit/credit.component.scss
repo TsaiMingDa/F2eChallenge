@@ -1,0 +1,143 @@
+@import '../../assets/element.scss';
+input{
+  border: none;
+  background-color: $side_color;
+  border-bottom: 1px solid $main_color;
+  font-size: nth($font, 3);
+  color: #fff;
+  @include rwd(){
+    font-size: nth($font, 2);
+  }
+}
+.wrap{
+  width: 70%;
+  margin: auto;
+  @include rwd(){
+    padding-bottom: 60px;
+  }
+}
+.pay_title{
+  font-size: nth($font, 6);
+  color: #fff;
+  margin-bottom: 90px;
+  margin-top: 250px;
+  @include rwd() {
+    display: none;
+  }
+}
+.title{
+  color: $main_color;
+  font-size: nth($font, 2);
+  @include rwd (){
+    font-size: nth($font, 1);
+  }
+}
+.star{
+  color: red;
+}
+.banks{
+  display: flex;
+  justify-content: space-between;
+}
+.bank{
+  width: 20%;
+  img{
+    width: 100%;
+  }
+}
+.name{
+  width: 100%;
+}
+.card_number{
+  display: flex;
+  flex-direction: column;
+}
+.num{
+  display: flex;
+  input{
+    width: 20%;
+  }
+  span{
+    text-align: center;
+    flex-grow: 1;
+    color: $main_color;
+  }
+}
+.credit_id_info{
+  display: flex;
+  input{
+    width: 20%;
+
+  }
+}
+.deadline_wrap,.back_num{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  ::-webkit-input-placeholder {
+    text-align: center;
+  }
+}
+
+.slash{
+  color: $main_color;
+  font-size: nth($font, 3);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.phone_info{
+  font-size: nth($font, 1);
+  color: #FFD065;
+  margin-top: 15px;
+}
+.card_number, .credit_id_info, .phone_wrap{
+  margin-top: 50px;
+}
+.name_wrap{
+  margin-top: 20px;
+}
+.phone_wrap{
+  input{
+    width: 100%;
+  }
+}
+.send{
+  width: 36%;
+  margin: auto;
+  color: $side_color;
+  background-color: $main_color;
+  font-size: nth( $font, 2);
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 64px;
+
+}
+input.ng-invalid.ng-touched{
+ border-bottom: 1px solid #FF521A;
+}
+.error{
+  color: #FF521A;
+  font-size: nth($font, 1);
+  position: relative;
+  img{
+    position: absolute;
+    width: 17px;
+    height: 15px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+.deadline_wrap{
+  img{
+    right: 15px;
+  }
+}
+.isDisable{
+  background-color: rgba(207, 201, 201, 0.822);
+  cursor: not-allowed;
+}

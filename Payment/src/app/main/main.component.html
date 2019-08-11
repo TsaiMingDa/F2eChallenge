@@ -1,0 +1,32 @@
+<div class="main_info">
+  <div class="banner">
+      <img src="../assets/images/banner.png" alt="">
+  </div>
+  <div class="content_wrap">
+    <div class="txt_wrap">
+        <div class="order_title">訂單資訊</div>
+        <div class="title">商店名稱</div>
+        <div class="content">Amazing 3C online Shop</div>
+        <div class="title">訂單編號</div>
+        <div class="content">239234dwnd321</div>
+        <div class="title">本筆訂單將支付</div>
+        <div class="money">1,250<span>元</span></div>
+        <div class="title">支付方式</div>
+      </div>
+      <div class="card" (click)="showContent('credit')" [class.active] = "payment.credit">信用卡</div>
+      <div class="pay_contnet credit_car">
+          <app-credit></app-credit>
+      </div>
+      <div class="card"  [class.active] = "payment.web">網路ATM<span>(晶片讀卡機轉帳)</span></div>
+      <div class="pay_contnet web_atm" >
+          <app-webatm></app-webatm>
+      </div>
+      <div class="card"  [class.active] = "payment.real">ATM櫃員機<span>(實體ATM及網銀)</span></div>
+      <div class="pay_contnet real_atm" >
+
+      </div>
+  </div>
+</div>
+<div class="logo">
+  <img src="../assets/images/Group_187.png" alt="">
+</div>
