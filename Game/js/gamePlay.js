@@ -10,7 +10,8 @@ const gamePlay = {
     this.load.image('flower', 'images/obj/book.png');
     this.load.image('flower', 'images/obj/gossip.png');
     this.load.image('success', 'images/success.png');
-    this.timeInit = 10;
+
+    this.timeInit = 60;
     this.speedLv = 1;
     this.gameStop = false;
     this.isKeyJp = true;
@@ -36,12 +37,12 @@ const gamePlay = {
     this.player.setSize(100, 100);
     this.player.setCollideWorldBounds(true);//不會超出邊界
     this.physics.add.collider(this.player, this.floor);
-    
+
     const block = [
       {name: 'book', x: cw + 200, y: 320, w: 160, h: 83},
       {name: 'flower', x: cw + 200, y: ch / 2 - 30 , w: 200, h: 94},
       {name: 'gossip', x: cw + 200, y: 70, w: 130, h: 160},
-  ];
+    ];
   // this.bg1 = this.add.tileSprite(400, 225, cw, ch, 'bg1');
   
     this.anims.create({
