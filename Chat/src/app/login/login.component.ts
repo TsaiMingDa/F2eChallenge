@@ -9,9 +9,9 @@ export class LoginComponent implements OnInit {
   animalType = 'dog';
   roleImg = {
     // tslint:disable-next-line:max-line-length
-    dog: [{src: '../../assets/images/d1.png', active: false}, {src: '../../assets/images/d2.png', active: false}, {src: '../../assets/images/d3.png', active: false}, {src: '../../assets/images/d4.png', active: false}],
+    dog: [{src: './assets/images/d1.png', active: false}, {src: './assets/images/d2.png', active: false}, {src: './assets/images/d3.png', active: false}, {src: './assets/images/d4.png', active: false}],
     // tslint:disable-next-line:max-line-length
-    cat: [{src: '../../assets/images/c1.png', active: false}, {src: '../../assets/images/c2.png', active: false}, {src: '../../assets/images/c3.png', active: false}, {src: '../../assets/images/c4.png', active: false}]
+    cat: [{src: './assets/images/c1.png', active: false}, {src: './assets/images/c2.png', active: false}, {src: './assets/images/c3.png', active: false}, {src: './assets/images/c4.png', active: false}]
   };
   activeImg = this.roleImg.dog[0].src;
   constructor() { }
