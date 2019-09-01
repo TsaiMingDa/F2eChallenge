@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="column columnA">
+    <div class="animal" (click)="animalType = 'dog'" [class.active] = "animalType === 'dog'">狗狗</div>
+    <div class="animal" (click)="animalType = 'cat'" [class.active] = "animalType === 'cat'">貓貓</div>
+  </div>
+  <div class="column columnB">
+    <div class="title">WELCOME</div>
+    <div class="subTitle">阿貓阿狗聊天室</div>
+    <div class="pic">
+      <img [src]="activeImg" alt="">
+    </div>
+    <input type="text" class="name" placeholder="請輸入姓名">
+    <div class="btn enter"  [routerLink]="['/chat']">進入聊天</div>
+  </div>
+  <div class="column columnC">
+    <div class="rule" [class.active] = "item.active" *ngFor="let item of roleImg[animalType];let idx = index" (click)="changeImg($event, idx);"><img [src]="item.src" alt=""></div>
+  </div>
+</div>

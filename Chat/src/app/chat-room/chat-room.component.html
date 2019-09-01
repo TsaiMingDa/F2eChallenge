@@ -1,0 +1,37 @@
+<div class="side_bar">
+  <div class="icon">
+    <img src="../../assets/images/dh1.png" alt="">
+  </div>
+  <div class="icon_name">萬華彭于晏</div>{{newMessage}}
+  <div class="descript">星期一，天氣晴，大家安安</div>
+  <div class="edit">編輯</div>
+  <div class="option">大廳<br>模式</div>
+  <div class="option">系統<br>配對</div>
+  <div class="option">+<br>創建</div>
+</div>
+<div class="chat_wrap">
+  <div class="main_chat" #chatBox>
+    <div class="row" *ngFor="let item of chatContent">
+      <div class="role_info">
+        <div class="role_pic">
+          <img [src]="item.icon" alt="">
+        </div>
+        <div class="role_name">{{item.name}}</div>
+      </div>
+      <div class="chat_text">{{item.content}}</div>
+    </div>
+    <div class="me_row" *ngFor="let item of meChatContent">
+        <div class="me_chat_text">{{item.content}}</div>
+    </div>
+  </div>
+  <div class="text_box">
+    <div class="emoji_box">
+      <img src="../../assets/images/icon/emoji.png" alt="">
+      <img src="../../assets/images/icon/img.png" alt="">
+      <img src="../../assets/images/icon/file.png" alt="">
+    </div>
+    <input type="text" class="input_box" [(ngModel)]="newMessage">
+    <img class="send" src="../../assets/images/icon/send.png" alt="" (click)="send()">
+  </div>
+</div>
+

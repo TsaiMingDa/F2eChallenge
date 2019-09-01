@@ -1,0 +1,289 @@
+$mainDarkColor: #524A4A;
+$mainlightColor: #645B5B;
+$sideBar:#766B6B;
+$mainChat: #655C5C;
+$textBox: #968686;
+$font: 18px 22px 23px 24px 30px 46px;
+*{
+  // outline: 1px solid red;
+}
+html,body{
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background-color: $mainlightColor;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+header{
+  background-color: $mainDarkColor;
+  height: 50px;
+  padding-left: 30px;line-height: 50px;
+  font-size: nth($font, 4);
+}
+.main{
+  background-color: $mainDarkColor;
+  border-radius: 21px;
+  width: 65%;
+  height: 656px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.animal{
+  color: #fff;
+  width: 164px;
+  height: 63px;
+  border-radius: 9px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fff;
+  font-size: nth($font, 5);
+  text-align: center;
+  line-height: 63px;
+  margin-top: 10px;
+  cursor: pointer;
+  &.active{
+    border-width: 2px;
+    border-color: #FCAA72;
+  }
+}
+.columnA, .columnC{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.columnB{
+  color: #fff;
+  width: 70%;
+  text-align: center;
+}
+.rule{
+  box-sizing: border-box;
+  padding: 20px;
+  width: 110px;
+  height: 140px;
+  margin-top: 10px;
+  border-radius: 9px;
+  border: 1px solid #fff;
+  filter:opacity(35%);
+  background-color: rgba(255, 255, 255, .2);
+  cursor: pointer;
+  &.active{
+    filter: none;
+    border: 2px solid #FCAA72;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.title{
+  margin-top: 45px;
+  font-size: nth($font, 6);
+}
+.subTitle{
+  margin-top: 10px;
+  font-size: nth($font, 4);
+}
+.pic{
+  height: 230px;
+  margin-top: 40px;
+}
+.name{
+  box-sizing: border-box;
+  border: none;
+  background-color: $mainlightColor;
+  width: 80%;
+  height: 51px;
+  border-radius: 9px;
+  box-shadow: 0 0 1px $mainDarkColor;
+  font-size: nth($font, 2);
+  padding-left: 10px;
+  color: #fff;
+  margin-top: 20px
+}
+.enter{
+  color: black;
+  width: 178px;
+  height: 50px;
+  margin: auto;
+  line-height: 50px;
+  text-align: center;
+  background-color: #fff;
+  font-weight: 900;
+  border-radius: 30px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.side_bar{
+  display: inline-block;
+  width: 20%;
+  min-height: 100vh;
+  text-align: center;
+  color: #fff;
+  background-color: $sideBar;
+  vertical-align: top;
+}
+.chat_wrap{
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  display: inline-block;
+  background-color: $mainChat;
+}
+.main_chat{
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar { width: 0 !important }
+}
+.icon{
+  margin-top: 45px;
+}
+.icon_name{
+  font-size: nth($font, 4 );
+  font-weight: 500;
+  margin-top: 20px;
+}
+.descript{
+  font-size: nth($font, 1);
+  margin-top: 30px;
+
+}
+.edit{
+  font-size: nth($font, 1);
+  border-radius: 5px;
+  width: 60px;
+  height: 33px;
+  line-height: 33px;
+  background-color: $mainDarkColor;
+  margin: 40px auto 30px auto;
+}
+.option{
+  box-sizing: border-box;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  font-size: nth($font, 3);
+  background-color: $mainDarkColor;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  &.active{
+    background-color: #E8A87E;
+  }
+}
+.text_box{
+  background-color: $textBox;
+  border-radius: 8px;
+  position: absolute;
+  width: 95%;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  margin: auto;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.emoji_box{
+  border-right: 1px solid #fff;
+  img{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+.input_box{
+  border: none;
+  background-color: $textBox;
+  width: 70%;
+}
+.send{
+  margin-right: 10px;
+  margin-left: auto;
+}
+.main_chat{
+  color: #fff;
+}
+.row{
+  margin-top: 10px;
+  margin-left: 35px;
+  width: 50%;
+  font-size: 0;
+}
+.me_row{
+  margin-top: 10px;
+  margin-left: auto;
+  width: 50%;
+  font-size: 0;
+}
+.role_info{
+  float: left;
+  width: 20%;
+}
+.chat_text{
+  position: relative;
+  box-sizing: border-box;
+  padding: 25px;
+  float: right;
+  width: 70%;
+  border-radius: 14px;
+  font-size: nth($font, 1);
+  background-color: $mainDarkColor;
+  &::before{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid $mainDarkColor;
+    top: 20px;
+    left: -20px;
+  }
+}
+.me_chat_text{
+  font-size: nth($font, 1);
+  position: relative;
+  box-sizing: border-box;
+  padding: 25px;
+  float: right;
+  width: 70%;
+  border-radius: 14px;
+  background-color: $mainDarkColor;
+  margin-right: 20px;
+  &::before{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid $mainDarkColor;
+    top: 20px;
+    right: -20px;
+  }
+}
+.role_pic{
+  width: 40px;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.role_name{
+  font-size: 14px;
+}
+
