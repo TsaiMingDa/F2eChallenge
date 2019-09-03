@@ -141,8 +141,8 @@ header{
 .main_chat{
   display: flex;
   flex-direction: column;
-  height: 80vh;
-  overflow-y: scroll;
+  height: 500px;
+  overflow-y: auto;
   &::-webkit-scrollbar { width: 0 !important }
 }
 .icon{

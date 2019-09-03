@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'app-chat-room',
   templateUrl: './chat-room.component.html',
   styleUrls: ['./chat-room.component.scss']
 })
-export class ChatRoomComponent implements OnInit {
+export class ChatRoomComponent implements OnInit,  AfterViewChecked {
   chatContent = [
     {icon: './assets/images/dh1.png', name: '煞氣a仔仔', content: '安安，萬華彭于晏～哪裡人？萬華彭于晏是真的嗎？'},
     // tslint:disable-next-line:max-line-length
@@ -15,14 +15,17 @@ export class ChatRoomComponent implements OnInit {
   ];
   meChatContent = [];
   newMessage;
+
   @ViewChild('chatBox', {static: false}) cb: ElementRef;
   constructor() { }
 
   ngOnInit() {
   }
+  ngAfterViewChecked() {
+    this.cb.nativeElement.scrollTop = this.cb.nativeElement.scrollHeight - 500;
+  }
   send() {
     this.meChatContent.push({icon: './assets/images/ch3.png', name: '我是喵喵喵', content: this.newMessage});
-    this.cb.nativeElement.scrollTop = this.cb.nativeElement.scrollTop + 120;
   }
 
 }
