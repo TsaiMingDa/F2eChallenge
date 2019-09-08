@@ -1,0 +1,344 @@
+/* You can add global styles to this file, and also import other style files */
+$font: 16px 18px 24px 36px;
+$bordColor: #e4e3e3;
+$fontColor: #7B7B7B;
+*{
+  box-sizing: border-box;
+  // outline: 1px solid;
+}
+html,body{
+  margin: 0;
+  padding:0;
+  height: 100%;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $fontColor;
+}
+header{
+  display: flex;
+  height: 86px;
+  align-items: center;
+  box-shadow: 0 2px 1px $bordColor;
+}
+.logo{
+  width: 20%;
+  font-size: nth($font, 4);
+  margin-left: 10px;
+  font-family: 'Fugaz One', cursive;
+}
+.search{
+  display: flex;
+  align-items: center;
+  input{
+    border: none;
+    height: 24px;
+    padding-left: 27px;
+    font-size: nth($font, 1);
+    color: #7B7B7B;
+    font-family: 'Noto Sans TC', sans-serif;
+    // font-weight: 700;
+    background-image: url(./assets/images/search.svg);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    &:focus {
+      outline: none !important;
+      border:none;
+      box-shadow: 0 1px 0 #719ECE;
+    }
+  }
+}
+.function_item{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-right: 10px;
+}
+.info{
+  display: flex;
+  align-items: center;
+}
+.alert, .setting{
+  width: 33px;
+  height: 33px;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.setting{
+  margin-left: 24px;
+}
+.avatar{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 64px;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.main{
+  display: flex;
+  height: calc(100% - 86px);
+}
+.side{
+  width: 20%;
+  max-width: 250px;
+  height: 100%;
+  border-right: 2px solid $bordColor;
+  padding-top: 25px;
+}
+.new{
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  border-radius: 8px;
+  width: 45%;
+  background-color: #3E68B7;
+  color: #fff;
+  font-size: nth($font, 2);
+  line-height: 2em;
+  margin-left: 25px;
+  cursor: pointer;
+  // overflow: visible;
+}
+.upload{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  color: $fontColor;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0 1px 3px 2px $bordColor;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  label{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    font-size: nth($font, 1);
+    background-repeat: no-repeat;
+    padding-left: 15px;
+    margin-top: 10px;
+    &:hover{
+      color: #3E68B7;
+    }
+
+    i{
+      margin-right: 15px;
+      vertical-align: sub;
+    }
+  }
+
+  input{
+    display: none;
+  }
+}
+.uploadHind{
+  display: none;
+}
+.new_file{
+  border-bottom: 1px solid $bordColor;
+  padding-bottom: 10px;
+}
+.up_document{
+}
+.up_file{
+
+}
+.list{
+  margin-top: 25px;
+  margin-left: 40px;
+}
+.item{
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  &:hover{
+    color: #3E68B7;
+    &::before{
+      content: '';
+      width: 0;
+      height: 0;
+      display: inline-block;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 6px solid #000;
+      position: absolute;
+      left: -13px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+}
+.cloud{
+  background-image: url(assets/images/cloud.svg);
+}
+.recent{
+  background-image: url(assets/images/time.svg);
+}
+.start{
+  background-image: url(assets/images/star1.svg);
+}
+.trash{
+  background-image: url(assets/images/trash.svg);
+}
+.store{
+  background-image: url(assets/images/volume.svg);
+  border-top: 1px solid $bordColor;
+  padding-left: 80px;
+  padding-top: 20px;
+  background-position: 40px 20px;
+}
+.space{
+  padding-left: 80px;
+  color: #9D9D9D;
+  font-size: nth($font, 2);
+}
+.contnet{
+  width: 80%;
+}
+.title{
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: nth($font, 3 );
+}
+.d_content{
+  padding: 30px;
+  background-color: #fcfcfc;
+  height: calc(100% - 71px);
+  overflow: auto;
+}
+.d_head{
+  display: flex;
+  border-bottom: 2px solid $bordColor;
+  padding-bottom: 5px;
+}
+.name{
+  position: relative;
+  width: 48%;
+  padding-left: 25px;
+  img{
+    width: 20px;
+    vertical-align: sub;
+    margin-right: 15px;
+  }
+}
+.d_head{
+  .name{
+    &::before{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 65px;
+      top: 8px;
+      border-top: 5px solid #333;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+    }
+  }
+}
+.owner{
+  width: 10%;
+}
+.time{
+  width: 24%;
+}
+.size{
+  width: 13%;
+}
+.more{
+  width: 5%;
+  position: relative;
+}
+.d_body{
+  .more_wrap{
+    display: none;
+    width: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $bordColor;
+    background-color: #fff;
+    border-radius: 5px;
+    div{
+      width: 100%;
+      border-bottom: 1px solid $bordColor;
+      padding: 5px 9px;
+      cursor: pointer;
+    }
+  }
+}
+
+.d_data{
+  display: flex;
+  border-bottom: 2px solid $bordColor;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.creatName{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input{
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+.box {
+  width: 250px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 1px 2px 2px 2px $bordColor;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5px 15px;
+}
+.btn{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+.confirm, .cancel{
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid $bordColor;
+  border-radius: 5px;
+  margin-right: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+.confirm{
+  background-color: rgba(	0, 191, 255, 1);
+  &:hover{
+    background-color: rgba(	0, 191, 255, .6);
+  }
+}
+.cancel{
+  background-color: rgba(238, 44, 44, 1);
+  &:hover{
+    background-color: rgba(238, 44, 44, .6);
+  }
+}

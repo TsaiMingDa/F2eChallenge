@@ -1,0 +1,70 @@
+<header (click)="uploadHindFunction()">
+  <div class="logo">THE F2E</div>
+  <div class="function_item">
+    <div class="search"><input type="text" placeholder="搜尋雲端硬碟"></div>
+    <div class="info">
+      <div class="alert"><img src="../assets/images/cc-bell-o.svg" alt=""></div>
+      <div class="setting"><img src="../assets/images/setting.svg" alt=""></div>
+      <div class="avatar"><img src="../assets/images/avatar.jpg" alt=""></div>
+    </div>
+  </div>
+</header>
+<div class="main" (click)="uploadHindFunction()">
+  <div class="side">
+    <div class="new"  (click)="uploadFunction($event)">
+      <div class="plus">＋</div>
+      <div>新增</div>
+      <div class="upload" [class.uploadHind] = "uploadHind">
+        <label class="new_file" for="" (click)="createFolder($event)"><i class="material-icons">create_new_folder</i>新增資料夾</label>
+        <label class="up_document" for="ud"><i class="material-icons">note_add</i>上傳檔案<input type="file" id="ud" (change)="newDocument($event)"></label>
+        <!-- <label class="up_file" for="uf"><i class="material-icons">create_new_folder</i>上傳資料夾<input type="file" id="uf"></label> -->
+      </div>
+    </div>
+    <div class="list">
+      <div class="item cloud">我的雲端硬碟</div>
+      <div class="item recent">近期存取</div>
+      <div class="item start">已加星號</div>
+      <div class="item trash">垃圾桶</div>
+    </div>
+    <div class="item store">儲存空間</div>
+    <div class="space">目前使用量</div>
+  </div>
+  <div class="contnet">
+    <div class="title">我的雲端硬碟</div>
+    <div class="d_content">
+      <div class="d_head">
+        <div class="name">名稱</div>
+        <div class="owner">擁有者</div>
+        <div class="time">最後修改時間</div>
+        <div class="size">檔案大小</div>
+        <div class="more">
+        </div>
+
+      </div>
+      <div class="d_body">
+        <div class="d_data" *ngFor="let item of data;let idx = index;">
+          <div class="name"><img [src]="item.fileType" alt="">{{item.fileName}}</div>
+          <div class="owner">我</div>
+          <div class="time">剛剛</div>
+          <div class="size">{{item.fileSize}}</div>
+          <div class="more" (click)="moreWrapShow($event, idx)">...
+            <div class="more_wrap" [style.display]='item.moreWrap'>
+              <div class="add_start">加星號</div>
+              <div class="del" [attr.data-id]="idx" (click)="del(idx)" >刪除</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="creatName" [style.display] = "creatNameShow">
+  <div class="box">
+    <div class="txt">請輸入資料夾名稱</div>
+    <input type="text" #folderN>
+    <div class="btn">
+      <div class="confirm" (click)="inputFileName(folderN)">確認</div>
+      <div class="cancel" (click)="creatNameHide()">取消</div>
+    </div>
+  </div>
+</div>
