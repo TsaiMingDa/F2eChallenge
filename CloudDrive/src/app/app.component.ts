@@ -11,7 +11,7 @@ export class AppComponent {
   creatNameShow = 'none';
   moreWrap = 'none';
   data = [];
-  dataBackup;
+  dataBackup = [];
   trash = [];
   itemMouseOver = {
     cloud: false,
@@ -87,6 +87,7 @@ export class AppComponent {
     this.creatNameShow = 'none';
   }
   inputFileName(folderN) {
+    console.log(this.data);
     this.data.push({
       fileName: folderN.value,
       fileSize: this.formatBytes(0),
@@ -112,7 +113,7 @@ export class AppComponent {
     this.backUpData();
     this.data = this.trash;
   }
-  oriData() {
+  oriData(e) {
     this.data = this.dataBackup;
   }
   searchFile(el) {
