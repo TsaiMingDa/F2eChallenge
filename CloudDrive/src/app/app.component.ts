@@ -8,10 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'CloudDrive';
   uploadHind = true;
-  creatNameShow = 'none'
+  creatNameShow = 'none';
   moreWrap = 'none';
   data = [];
+  dataBackup;
   trash = [];
+  itemMouseOver = {
+    cloud: false,
+    trash: false
+  };
   uploadFunction(e) {
     // console.log('click');
     e.stopPropagation();
@@ -19,7 +24,9 @@ export class AppComponent {
   }
   uploadHindFunction() {
     this.uploadHind = true;
-    this.moreWrap = 'none';
+    this.data.forEach(v => {
+      v.moreWrap = 'none';
+    });
   }
   newFile(e){
 
@@ -33,8 +40,10 @@ export class AppComponent {
     this.data.push({
       fileName: fn,
       fileSize: fs,
-      fileType: ft
+      fileType: ft,
+      moreWrap: 'none'
     });
+    this.backUpData();
   }
   fileType(fn) {
     const sp = fn.split('.');
@@ -84,6 +93,7 @@ export class AppComponent {
       fileType: 'assets/images/uploadfilesx.svg',
       moreWrap: 'none'
     });
+    this.backUpData();
     this.creatNameHide();
   }
   moreWrapShow(e, idx) {
@@ -97,6 +107,36 @@ export class AppComponent {
     this.data = this.data.filter((item, index) => {
       return idx !== index;
     });
+  }
+  trashData() {
+    this.backUpData();
+    this.data = this.trash;
+  }
+  oriData() {
+    this.data = this.dataBackup;
+  }
+  searchFile(el) {
+    const value = el.value;
 
+    if (value === '') {
+      this.data = this.dataBackup;
+      return;
+    }
+    this.data = this.data.filter((currentValue) => {
+      if (currentValue.fileName.indexOf(value) !== -1) {
+        return true;
+      }
+    });
+  }
+  backUpData() {
+    this.dataBackup = this.data.map(currentValue => currentValue);
+    console.log(this.dataBackup);
+    console.log(this.data);
+  }
+  itemClick(item) {
+    for(let key in this.itemMouseOver) {
+       this.itemMouseOver[key] = false;
+    }
+    this.itemMouseOver[item] = true;
   }
 }

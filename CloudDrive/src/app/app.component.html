@@ -1,7 +1,7 @@
 <header (click)="uploadHindFunction()">
   <div class="logo">THE F2E</div>
   <div class="function_item">
-    <div class="search"><input type="text" placeholder="搜尋雲端硬碟"></div>
+    <div class="search"><input type="text" placeholder="搜尋雲端硬碟" #search (input)="searchFile(search)"></div>
     <div class="info">
       <div class="alert"><img src="assets/images/cc-bell-o.svg" alt=""></div>
       <div class="setting"><img src="assets/images/setting.svg" alt=""></div>
@@ -21,10 +21,10 @@
       </div>
     </div>
     <div class="list">
-      <div class="item cloud">我的雲端硬碟</div>
+      <div class="item cloud"(click)="oriData()" (mouseover)="itemMouseOver.cloud = true" (mouseout) ="itemMouseOver.cloud = false" [class.mouse_over] = "itemMouseOver.cloud" (click)="itemClick('cloud')">我的雲端硬碟</div>
       <div class="item recent">近期存取</div>
       <div class="item start">已加星號</div>
-      <div class="item trash">垃圾桶</div>
+      <div class="item trash" (click)="trashData()" (mouseover)="itemMouseOver.trash = true" (mouseout) ="itemMouseOver.trash = false" [class.mouse_over] = "itemMouseOver.trash" (click)="itemClick('trash')">垃圾桶</div>
     </div>
     <div class="item store">儲存空間</div>
     <div class="space">目前使用量</div>

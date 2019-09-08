@@ -161,7 +161,9 @@ header{
   padding-left: 40px;
   margin-bottom: 20px;
   cursor: pointer;
-  &:hover{
+}
+.mouse_over{
+  &.item{
     color: #3E68B7;
     &::before{
       content: '';
