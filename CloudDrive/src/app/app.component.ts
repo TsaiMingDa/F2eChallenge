@@ -13,6 +13,7 @@ export class AppComponent {
   data = [];
   dataBackup = [];
   trash = [];
+  locker = false;
   itemMouseOver = {
     cloud: false,
     trash: false
@@ -20,6 +21,9 @@ export class AppComponent {
   uploadFunction(e) {
     // console.log('click');
     e.stopPropagation();
+    if (this.locker) {
+      return;
+    }
     this.uploadHind = !this.uploadHind;
   }
   uploadHindFunction() {
@@ -87,7 +91,7 @@ export class AppComponent {
     this.creatNameShow = 'none';
   }
   inputFileName(folderN) {
-    console.log(this.data);
+
     this.data.push({
       fileName: folderN.value,
       fileSize: this.formatBytes(0),
@@ -102,9 +106,12 @@ export class AppComponent {
     this.data[idx].moreWrap = 'block';
   }
   del(idx) {
-    this.trash = this.data.filter((item, index) => {
+    const delItem = this.data.filter((item, index) => {
       return idx === index;
-     });
+     })
+    console.log(delItem);
+    this.trash = this.trash.concat(delItem);
+     console.log(this.trash);
     this.data = this.data.filter((item, index) => {
       return idx !== index;
     });
@@ -131,10 +138,14 @@ export class AppComponent {
   }
   backUpData() {
     this.dataBackup = this.data.map(currentValue => currentValue);
-    console.log(this.dataBackup);
-    console.log(this.data);
   }
   itemClick(item) {
+    if(item === 'cloud') {
+      this.locker = false;
+    }
+    if(item === 'trash') {
+      this.locker = true;
+    }
     for(let key in this.itemMouseOver) {
        this.itemMouseOver[key] = false;
     }

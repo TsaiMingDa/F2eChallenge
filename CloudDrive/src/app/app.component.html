@@ -11,7 +11,7 @@
 </header>
 <div class="main" (click)="uploadHindFunction()">
   <div class="side">
-    <div class="new"  (click)="uploadFunction($event)">
+    <div class="new"  (click)="uploadFunction($event)" [class.locker] = "locker">
       <div class="plus">＋</div>
       <div>新增</div>
       <div class="upload" [class.uploadHind] = "uploadHind">
