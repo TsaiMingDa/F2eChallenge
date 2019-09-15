@@ -1,0 +1,147 @@
+*{
+  // outline: 1px solid;
+  box-sizing: border-box;
+}
+$border_color: rgb(204, 204, 204);
+html,body{
+  height: 100%;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+.side{
+  width: 24%;
+  height: 100%;
+  /* outline: 1px solid red; */
+  float: left;
+}
+.box{
+  height: 50px;
+  border-bottom: 1px solid $border_color;
+  &::after{
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+.inbox{
+  padding: 10px 15px;
+  border-bottom: 1px solid $border_color;
+  opacity: .5;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  img{
+    vertical-align: top;
+  }
+}
+.new{
+  width: 80px;
+  height: 36px;
+  display: inline-block;
+  line-height: 36px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  background-color: #173E43;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.ql-toolbar.ql-snow{
+  height: 50px;
+  border-left: none;
+  border-top: none;
+  // border: none;
+}
+.editor_box{
+  float: left;
+  width: 76%;
+  height: calc(100% - 42px);
+}
+.item{
+  padding: 10px 15px;
+  font-size: 0;
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid $border_color;
+  cursor: pointer;
+  &.active{
+    background-color:#3FB0AC;
+  }
+}
+.start{
+  display: inline-block;
+  width: 10%;
+}
+.title{
+  font-weight: 900;
+  font-size: 18px;
+  display: inline-block;
+  width: 90%;
+}
+.start{
+  display: inline-block;
+  width: 10%;
+  vertical-align: top;
+}
+.time{
+  width: 100%;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.dialog{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: #333;
+  opacity: .5;
+}
+.content{
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  p{
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+  }
+  input{
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    border-bottom: 1px solid $border_color;
+  }
+
+}
+.opt{
+  margin-top: 10px;
+  text-align: right;
+}
+.enter, .cancel{
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  display: inline-block;
+  width: 50px;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.enter{
+  background-color: rgb(97, 112, 245);
+}
+.cancel{
+  background-color: rgb(240, 75, 75);
+}
